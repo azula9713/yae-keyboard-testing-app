@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { fetchParagraph } from '$lib/api/paragraphAPI.js';
 	import TestParagraph from '$lib/components/typingTest/TestParagraph.svelte';
+	import { generateText } from '$lib/util/textGenerator.js';
 	import { Progressbar, Textarea } from 'flowbite-svelte';
 	import { onDestroy } from 'svelte';
-
-	export let data;
 
 	let userText = '';
 	let timeElapsed = 0;
@@ -12,7 +10,8 @@
 	let isTypingEnabled = true;
 	let progress = 0;
 	//remove double quotes from fetched paragraph at start and end
-	let fetchedParagraph = JSON.stringify(data.props.data, null, 2).replace(/\"/g, '');
+	// let fetchedParagraph = JSON.stringify(data.props.data, null, 2).replace(/\"/g, '');
+	let fetchedParagraph = generateText(2);
 
 	const startTimer = () => {
 		timerId = setInterval(() => {
@@ -25,8 +24,13 @@
 	};
 
 	const refetchParagraph = async () => {
-		const res = await fetchParagraph();
-		fetchedParagraph = JSON.stringify(res.props.data, null, 2).replace(/\"/g, '');
+		// fetchedParagraph = await fetchParagraph();
+		fetchedParagraph = generateText(2);
+		userText = '';
+		timeElapsed = 0;
+		progress = 0;
+		startTimer();
+		isTypingEnabled = true;
 	};
 
 	const getProgress = () => {
@@ -70,6 +74,12 @@
 					}
 
 					progress = getProgress();
+				}}
+				on:paste={(e) => {
+					e.preventDefault();
+				}}
+				on:select={(e) => {
+					e.preventDefault();
 				}}
 			/>
 			<Progressbar
