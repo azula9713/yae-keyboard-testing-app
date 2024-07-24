@@ -17,10 +17,10 @@
 		<FooterLinkGroup
 			ulClass="flex flex-wrap items-center mb-6 text-sm sm:mb-0 text-gray-500 dark:text-gray-400"
 		>
-			<FooterLink href="/">About</FooterLink>
-			<FooterLink href="/">Privacy Policy</FooterLink>
-			<FooterLink href="/">Cookie Policy</FooterLink>
-			<FooterLink href="/">Contact</FooterLink>
+			<FooterLink href="/about">About</FooterLink>
+			<FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
+			<FooterLink href="/cookie-policy">Cookie Policy</FooterLink>
+			<FooterLink href="/contact">Contact</FooterLink>
 		</FooterLinkGroup>
 	</div>
 </Footer>

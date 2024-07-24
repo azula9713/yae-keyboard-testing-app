@@ -9,8 +9,6 @@
 	let timerId: number;
 	let isTypingEnabled = true;
 	let progress = 0;
-	//remove double quotes from fetched paragraph at start and end
-	// let fetchedParagraph = JSON.stringify(data.props.data, null, 2).replace(/\"/g, '');
 	let fetchedParagraph = generateText(2);
 
 	const startTimer = () => {
@@ -24,19 +22,16 @@
 	};
 
 	const refetchParagraph = async () => {
-		// fetchedParagraph = await fetchParagraph();
 		fetchedParagraph = generateText(2);
 		userText = '';
 		timeElapsed = 0;
 		progress = 0;
-		startTimer();
 		isTypingEnabled = true;
 	};
 
 	const getProgress = () => {
 		const progress = (userText.length / fetchedParagraph.length) * 100;
 
-		//if progress is 100, stop timer. This is to prevent timer from running after user has finished typing. disable typing. and make sure progress does not exceed 100
 		if (progress >= 100) {
 			stopTimer();
 			isTypingEnabled = false;
@@ -54,8 +49,7 @@
 
 <div class="p-8 bg-slate-100 dark:bg-slate-950 w-full flex flex-col items-center">
 	<div class="w-full max-w-[1200px] p-12">
-		<TestParagraph {fetchedParagraph} {refetchParagraph} />
-
+		<TestParagraph {fetchedParagraph} {refetchParagraph} {userText} />
 		<div class="my-8">
 			<Textarea
 				id="textarea-id"
