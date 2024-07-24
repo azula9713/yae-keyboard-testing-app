@@ -1,7 +1,7 @@
 <script>
 	import { DarkMode, Navbar, NavBrand } from 'flowbite-svelte';
 
-	import logo from '../assets/logo.png';
+	import logo from '../../assets/logo.png';
 </script>
 
 <Navbar class="bg-white">

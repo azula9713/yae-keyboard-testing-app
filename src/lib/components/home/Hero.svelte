@@ -17,23 +17,6 @@
 	// Disable START button; prevent clicking twice
 	let isTyping = false;
 
-	// AUDIO SFX
-	// const typingSFX = [
-	// 	'https://assets.codepen.io/504854/type_1.mp3',
-	// 	'https://assets.codepen.io/504854/type_2.mp3',
-	// 	'https://assets.codepen.io/504854/type_3.mp3'
-	// ];
-
-	// const playSFX = () => {
-	// 	console.log('playSFX');
-	// 	let random = Math.floor(Math.random() * typingSFX.length);
-	// 	let url = typingSFX[random];
-	// 	let keySFX = new Audio(url);
-
-	// 	keySFX.play();
-	// 	keySFX.volume = Math.random();
-	// };
-
 	const typeChar = () => {
 		if (index < phrase.length) {
 			isTyping = true;
@@ -77,8 +60,8 @@
 				</p>
 			{/if}
 		</div>
-		<!-- <div>Hero Image</div> -->
 		<div class="w-1/2">
+			<!-- svelte-ignore a11y-img-redundant-alt -->
 			<img src={HeroImage} alt="Hero Image" class="w-full" />
 		</div>
 	</div>

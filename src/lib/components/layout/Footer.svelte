@@ -7,7 +7,7 @@
 		FooterLinkGroup
 	} from 'flowbite-svelte';
 
-	import logo from '../assets/logo.png';
+	import logo from '../../assets/logo.png';
 </script>
 
 <Footer footerType="logo" class="w-full rounded-none bg-white dark:bg-slate-900">
