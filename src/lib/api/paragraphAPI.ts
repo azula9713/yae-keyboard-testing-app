@@ -1,6 +1,6 @@
 import axios, { AxiosError } from 'axios';
 
-const API_ENDPOINT = 'http://metaphorpsum.com/sentences/3';
+const API_ENDPOINT = 'https://metaphorpsum.com/sentences/3';
 
 export const fetchParagraph = async () => {
 	try {
