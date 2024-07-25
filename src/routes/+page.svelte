@@ -22,7 +22,7 @@
 	];
 </script>
 
-<div class="p-8 bg-slate-100 dark:bg-slate-950 w-full flex flex-col items-center">
+<div class="px-8 bg-slate-100 dark:bg-slate-950 w-full flex flex-col items-center">
 	<div class="w-full p-4 max-w-[1200px]">
 		<Hero />
 		<section>

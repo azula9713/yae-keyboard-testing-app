@@ -8,7 +8,7 @@
 	<title>Yae Key Test</title>
 </svelte:head>
 
-<div class="w-screen flex items-center justify-start flex-col h-screen">
+<div class="flex items-center justify-start flex-col h-screen w-full">
 	<Header />
 	<slot />
 	<Footer />

@@ -1,10 +1,7 @@
 <script lang="ts">
-	//required props
 	export let title = '';
-
 	export let url = '';
 	export let description = '';
-	//non required prop color
 </script>
 
 <div class="space-y-4">
@@ -15,9 +12,6 @@
 			<div
 				class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 flex items-center justify-center space-x-4"
 			>
-				<!-- <img src={image} alt={title} class="w-48 h-auto" /> -->
-				<!-- flowbite icon -->
-
 				<slot name="icon"></slot>
 				<h2
 					class="text-xl font-medium sm:text-xl md:text-4xl text-gray-800 dark:text-gray-100 font-mono"

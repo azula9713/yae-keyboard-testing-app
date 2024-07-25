@@ -21,7 +21,6 @@
 		if (index < phrase.length) {
 			isTyping = true;
 			typedChar += phrase[index];
-			// playSFX();
 			index += 1;
 		} else {
 			stopTyping();
