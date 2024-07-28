@@ -22,7 +22,9 @@
 	];
 </script>
 
-<div class="px-8 bg-slate-100 dark:bg-slate-950 w-full flex flex-col items-center">
+<div
+	class="px-8 bg-slate-100 dark:bg-slate-950 w-full flex flex-col items-center min-h-[calc(100vh-[160px])"
+>
 	<div class="w-full p-4 max-w-[1200px]">
 		<Hero />
 		<section>

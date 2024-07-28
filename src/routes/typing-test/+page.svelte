@@ -103,55 +103,53 @@
 	});
 </script>
 
-<div class="px-8 bg-slate-100 dark:bg-slate-950 w-full flex flex-col items-center">
-	<div class="w-full max-w-[1200px] p-12">
-		<TestParagraph {fetchedParagraph} {refetchParagraph} {userText} />
-		<div class="my-8">
-			<Textarea
-				id="textarea-id"
-				placeholder="Start typing..."
-				rows="6"
-				name="typetest"
-				disabled={!isTypingEnabled}
-				class="placeholder:text-xl placeholder:font-mono my-4"
-				unWrappedClass="text-xl font-mono p-2.5 focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
-				bind:value={userText}
-				on:input={() => {
-					//if userText is empty, reset timeElapsed, else start timer
-					if (userText.length === 1) {
-						timeElapsed = 0;
-						startTimer();
-					}
-				}}
-				on:paste={(e) => {
-					e.preventDefault();
-				}}
-				on:select={(e) => {
-					e.preventDefault();
-				}}
-			/>
-			<Progressbar
-				{progress}
-				size="h-6"
-				precision={3}
-				labelInside
-				animate
-				color="primary"
-				labelInsideClass="text-slate-100 text-base font-medium text-center p-1 leading-none rounded-full"
-				class="my-4"
-			/>
-		</div>
+<div class="w-full max-w-[1200px] p-12">
+	<TestParagraph {fetchedParagraph} {refetchParagraph} {userText} />
+	<div class="my-8">
+		<Textarea
+			id="textarea-id"
+			placeholder="Start typing..."
+			rows="6"
+			name="typetest"
+			disabled={!isTypingEnabled}
+			class="placeholder:text-xl placeholder:font-mono my-4"
+			unWrappedClass="text-xl font-mono p-2.5 focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
+			bind:value={userText}
+			on:input={() => {
+				//if userText is empty, reset timeElapsed, else start timer
+				if (userText.length === 1) {
+					timeElapsed = 0;
+					startTimer();
+				}
+			}}
+			on:paste={(e) => {
+				e.preventDefault();
+			}}
+			on:select={(e) => {
+				e.preventDefault();
+			}}
+		/>
+		<Progressbar
+			{progress}
+			size="h-6"
+			precision={3}
+			labelInside
+			animate
+			color="primary"
+			labelInsideClass="text-slate-100 text-base font-medium text-center p-1 leading-none rounded-full"
+			class="my-4"
+		/>
+	</div>
 
-		<div class="text-white w-full flex items-center justify-between">
-			<StatItem statName="Time Elapsed" statValue={moment.utc(timeElapsed).format('mm:ss:SS')}>
-				<svelte:component this={ClockOutline} slot="icon" class="w-8 h-auto text-primary-300" />
-			</StatItem>
-			<StatItem statName="Words Per Minute" statValue={wpm.toFixed(2)}>
-				<svelte:component this={PenNibOutline} slot="icon" class="w-8 h-auto text-primary-300" />
-			</StatItem>
-			<StatItem statName="Accuracy" statValue={(accuracy * 100).toFixed(2) + '%'}>
-				<svelte:component this={ClockOutline} slot="icon" class="w-8 h-auto text-primary-300" />
-			</StatItem>
-		</div>
+	<div class="text-white w-full flex items-center justify-between">
+		<StatItem statName="Time Elapsed" statValue={moment.utc(timeElapsed).format('mm:ss:SS')}>
+			<svelte:component this={ClockOutline} slot="icon" class="w-8 h-auto text-primary-300" />
+		</StatItem>
+		<StatItem statName="Words Per Minute" statValue={wpm.toFixed(2)}>
+			<svelte:component this={PenNibOutline} slot="icon" class="w-8 h-auto text-primary-300" />
+		</StatItem>
+		<StatItem statName="Accuracy" statValue={(accuracy * 100).toFixed(2) + '%'}>
+			<svelte:component this={ClockOutline} slot="icon" class="w-8 h-auto text-primary-300" />
+		</StatItem>
 	</div>
 </div>

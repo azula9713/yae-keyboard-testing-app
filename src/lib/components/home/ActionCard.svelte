@@ -5,12 +5,12 @@
 </script>
 
 <div class="space-y-4">
-	<a href={url} class="group relative block h-72">
+	<a href={url} class="group relative block h-60">
 		<div
 			class="relative flex h-full justify-center transform items-center border-2 border-black bg-slate-200 dark:bg-slate-800 transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 rounded-lg"
 		>
 			<div
-				class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 flex items-center justify-center space-x-4"
+				class="transition-opacity group-hover:absolute group-hover:opacity-0 flex items-center justify-center space-x-4"
 			>
 				<slot name="icon"></slot>
 				<h2

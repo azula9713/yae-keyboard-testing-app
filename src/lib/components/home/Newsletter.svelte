@@ -1,5 +1,5 @@
 <section>
-	<div class="p-8 md:p-12 lg:px-16 lg:py-24">
+	<div class="p-8">
 		<div class="mx-auto max-w-lg text-center">
 			<h2 class="text-2xl font-bold text-gray-900 dark:text-gray-200 md:text-3xl">
 				Never miss an update!

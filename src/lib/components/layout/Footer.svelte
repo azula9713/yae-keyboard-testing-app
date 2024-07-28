@@ -10,7 +10,7 @@
 	import logo from '../../assets/logo.png';
 </script>
 
-<Footer footerType="logo" class="w-full rounded-none bg-white dark:bg-slate-900">
+<Footer footerType="logo" class="w-full rounded-none bg-white dark:bg-slate-900 h-[80px]">
 	<div class="sm:flex sm:items-center sm:justify-between">
 		<FooterBrand href="/" src={logo} alt="Flowbite Logo" />
 		<FooterCopyright href="https://yaepublishinghouse.online" by="Yae Publishing House." />
