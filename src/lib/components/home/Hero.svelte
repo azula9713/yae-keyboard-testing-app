@@ -1,67 +1,25 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	import HeroImage from '../../assets/hero.png';
-
-	let phrase = "Let's test your Keyboard, shall we?"; // text to be typed
-	let typedChar = ''; // SECTION displaying typed text
-	let index = 0;
-	let typewriter: number; // for setInterval/clearInterval
-
-	// If Input is empty, clear out SECTION displaying typed text
-	$: if (!phrase) {
-		typedChar = '';
-		index = typedChar.length;
-	}
-
-	// Disable START button; prevent clicking twice
-	let isTyping = false;
-
-	const typeChar = () => {
-		if (index < phrase.length) {
-			isTyping = true;
-			typedChar += phrase[index];
-			index += 1;
-		} else {
-			stopTyping();
-			return;
-		}
-	};
-
-	const typing = () => (typewriter = setInterval(typeChar, 30));
-
-	const stopTyping = () => {
-		clearInterval(typewriter);
-		isTyping = false;
-	};
-
-	//start typing on load
-	onMount(() => {
-		typing();
-	});
 </script>
 
 <section>
 	<div class="w-full flex items-center justify-between">
 		<div class="w-1/2">
-			<form on:submit|preventDefault={typing}>
-				<h2
-					class="text-6xl font-bold text-gray-800 dark:text-gray-200 font-mono w-full leading-tight tracking-tighter"
-				>
-					{typedChar}
-				</h2>
-			</form>
-			{#if !isTyping}
-				<p
-					class="text-2xl font-bold text-gray-800 dark:text-gray-200 font-mono w-full leading-tight tracking-tighter mt-12"
-				>
-					Choose from the following options:
-				</p>
-			{/if}
+			<h2 class="text-6xl font-bold text-gray-800 dark:text-gray-200 w-full leading-tight">
+				Let's test your Keyboard, shall we?
+			</h2>
 		</div>
-		<div class="w-1/2">
+		<div class="w-1/2 pl-24">
 			<!-- svelte-ignore a11y-img-redundant-alt -->
-			<img src={HeroImage} alt="Hero Image" class="w-full" />
+			<img
+				src={HeroImage}
+				alt="Hero Image"
+				class="w-[80%] h-auto"
+				style="
+				object-fit: cover;
+				object-position: center;
+			"
+			/>
 		</div>
 	</div>
 </section>

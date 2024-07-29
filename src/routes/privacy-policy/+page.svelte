@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		document.title = 'Privacy Policy';
+		document.title = 'Yae Key Test - Privacy Policy';
 	});
 </script>
 

@@ -121,15 +121,29 @@
 		document.getElementById(currentKey.toLowerCase())?.classList.remove('activate');
 	};
 
+	const disableRightClick = (e: MouseEvent) => {
+		e.preventDefault();
+	};
+
 	$: pressedKeys, clearActiveKeys();
+	$: keyboardType,
+		() => {
+			localStorage.setItem('keyboardType', keyboardType);
+		};
 
 	onMount(() => {
+		const storedKeyboardType = localStorage.getItem('keyboardType');
+		if (storedKeyboardType) {
+			keyboardType = storedKeyboardType;
+		}
 		document.addEventListener('keydown', handleKeyDown, true);
 		document.addEventListener('keyup', handleKeyUp, true);
+		document.addEventListener('contextmenu', disableRightClick);
 
 		return () => {
 			document.removeEventListener('keydown', handleKeyDown, true);
 			document.removeEventListener('keyup', handleKeyUp, true);
+			document.removeEventListener('contextmenu', disableRightClick);
 		};
 	});
 </script>
@@ -153,9 +167,10 @@
 	</div>
 {:else}
 	<div class="w-full flex flex-col items-center justify-center text-center my-12">
-		<div class="text-white">
-			<h1 class="text-4xl font-bold">Coming Soon</h1>
+		<div class="text-primary-400 dark:text-slate-200">
+			<h1 class="text-4xl font-bold">This feature is coming soon</h1>
 			<p class="mt-4 text-lg">We're working on something awesome!</p>
+			<p class="mt-4 text-lg">Want to be the first to know when it's ready?</p>
 		</div>
 		<Newsletter />
 	</div>
