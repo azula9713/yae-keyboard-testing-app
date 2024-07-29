@@ -2,6 +2,8 @@
 	"name": "yae-keyboard-testing-app",
 	"version": "0.0.1",
 	"private": true,
+	"license": "MIT",
+	"author": "azula9713",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",

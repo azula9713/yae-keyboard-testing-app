@@ -1,5 +1,31 @@
-<script>
-	import { Button, Input } from 'flowbite-svelte';
+<script lang="ts">
+	import { Button, Input, Toast } from 'flowbite-svelte';
+	import { CheckCircleOutline } from 'flowbite-svelte-icons';
+
+	import axios from 'axios';
+
+	let email = '';
+	let isToastVisible = false;
+
+	const subscribeToNewsletter = async () => {
+		if (!email) {
+			alert('Please enter your email address.');
+			return;
+		}
+
+		const resp = await axios.post('/api/newsletter', {
+			email
+		});
+
+		if (resp.status === 201) {
+			email = '';
+			isToastVisible = true;
+
+			setTimeout(() => {
+				isToastVisible = false;
+			}, 3000);
+		}
+	};
 </script>
 
 <section>
@@ -16,7 +42,7 @@
 		</div>
 
 		<div class="mx-auto mt-8 max-w-xl">
-			<form action="#" class="sm:flex sm:gap-4">
+			<div class="sm:flex sm:gap-4">
 				<div class="w-full flex items-center justify-start">
 					<Input
 						type="email"
@@ -24,31 +50,14 @@
 						placeholder="Enter your email address"
 						class="p-3"
 						required
+						bind:value={email}
 					/>
 				</div>
 
-				<Button type="submit" class="w-full max-w-max flex items-center justify-center space-x-2">
-					<span class="text-sm font-medium"> Sign Up </span>
-
-					<svg
-						class="size-5 rtl:rotate-180"
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke="currentColor"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M17 8l4 4m0 0l-4 4m4-4H3"
-						/>
-					</svg>
-				</Button>
-
-				<!-- <button
-					type="submit"
-					class="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-primary-300 px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto"
+				<Button
+					type="button"
+					class="w-full max-w-max flex items-center justify-center space-x-2"
+					on:click={subscribeToNewsletter}
 				>
 					<span class="text-sm font-medium"> Sign Up </span>
 
@@ -66,8 +75,25 @@
 							d="M17 8l4 4m0 0l-4 4m4-4H3"
 						/>
 					</svg>
-				</button> -->
-			</form>
+				</Button>
+			</div>
 		</div>
 	</div>
+	{#if isToastVisible}
+		<div class="w-full flex items-center justify-center">
+			<Toast
+				toastStatus
+				align
+				on:close={() => {
+					isToastVisible = false;
+				}}
+			>
+				<CheckCircleOutline
+					slot="icon"
+					class="w-6 h-6 text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200"
+				/>
+				You have successfully subscribed to our newsletter.
+			</Toast>
+		</div>
+	{/if}
 </section>
