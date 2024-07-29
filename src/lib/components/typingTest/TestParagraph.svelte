@@ -23,7 +23,7 @@
 
 <div class="w-full flex items-end justify-between">
 	{#if fetchedParagraph.length > 0}
-		<p class="text-slate-400 tracking-[0.15em] font-mono text-xl sm:text-3xl md:text-4xl w-full">
+		<p class="text-slate-400 text-xl sm:text-3xl md:text-4xl w-full">
 			<!-- {fetchedParagraph} -->
 
 			{@html highlightText(fetchedParagraph, userText).join('')}

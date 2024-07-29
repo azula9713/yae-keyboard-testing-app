@@ -1,38 +1,23 @@
-# create-svelte
+![Logo](https://i.ibb.co/CtTpThY/logo.png)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+# Yae Key Test
 
-## Creating a project
+Yae Key Test is a web application that allows users to test their keyboard and typing skills. The app provides a comprehensive keyboard test to verify the functionality of every key on your keyboard. It also offers a typing test to assess your typing speed and accuracy with a timed typing challenge.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Tech Stack
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+**Client:** Svelte Kit, Flowbite, TailwindCSS
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## 🔗 Links
 
-## Developing
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://yaepublishinghouse.online/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nilesh-viduranga/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/azula9713)
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## License
 
-```bash
-npm run dev
+[MIT](https://choosealicense.com/licenses/mit/)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Support
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+For support, email fake@fake.com or join our Slack channel.

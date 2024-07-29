@@ -12,6 +12,6 @@
 
 	<div>
 		<p class="text-2xl font-medium text-gray-900 dark:text-gray-200">{statValue}</p>
-		<p class="text-sm text-gray-500">{statName}</p>
+		<p class="text-sm text-gray-500 dark:text-gray-400">{statName}</p>
 	</div>
 </article>

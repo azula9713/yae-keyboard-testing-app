@@ -5,7 +5,7 @@
 </script>
 
 <div class="space-y-4">
-	<a href={url} class="group relative block h-60">
+	<a href={url} class="group relative block h-48">
 		<div
 			class="relative flex h-full justify-center transform items-center border-2 border-black bg-slate-200 dark:bg-slate-800 transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 rounded-lg"
 		>

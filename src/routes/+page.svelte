@@ -7,7 +7,7 @@
 
 	const actionsArray = [
 		{
-			title: 'Keyboard Test',
+			title: 'Key Test',
 			icon: KeyboardOutline,
 			url: '/keyboard-test',
 			description:
@@ -27,7 +27,7 @@
 >
 	<div class="w-full p-4 max-w-[1200px]">
 		<Hero />
-		<section>
+		<section class="mb-8">
 			<div class="grid grid-cols-1 gap-4 mt-8 sm:grid-cols-2">
 				{#each actionsArray as action}
 					<ActionCard title={action.title} url={action.url} description={action.description}>
