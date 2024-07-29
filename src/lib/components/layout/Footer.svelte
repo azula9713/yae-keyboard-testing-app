@@ -20,7 +20,6 @@
 			<FooterLink href="/about">About</FooterLink>
 			<FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
 			<FooterLink href="/cookie-policy">Cookie Policy</FooterLink>
-			<FooterLink href="/contact">Contact</FooterLink>
 		</FooterLinkGroup>
 	</div>
 </Footer>

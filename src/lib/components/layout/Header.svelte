@@ -16,7 +16,7 @@
 			class="btn btn-primary"
 			target="_blank"
 		>
-			<GithubSolid class="size-5" />
+			<GithubSolid class="size-5 text-gray-500 dark:text-gray-400" />
 		</a>
 		<DarkMode />
 	</div>

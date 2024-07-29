@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Progressbar, Textarea } from 'flowbite-svelte';
-	import { ClockOutline, PenNibOutline } from 'flowbite-svelte-icons';
+	import { AwardOutline, ClockOutline, PenNibOutline } from 'flowbite-svelte-icons';
 	import moment from 'moment';
-	import { onDestroy } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	import StatItem from '$lib/components/typingTest/StatItem.svelte';
 	import TestParagraph from '$lib/components/typingTest/TestParagraph.svelte';
@@ -28,6 +28,10 @@
 	const stopTimer = () => {
 		clearInterval(timerId);
 		wpm = calculateWPM();
+	};
+
+	const disableRightClick = (e: MouseEvent) => {
+		e.preventDefault();
 	};
 
 	const calculateWPM = () => {
@@ -96,10 +100,16 @@
 		wpm = calculateWPM();
 	}
 
+	onMount(() => {
+		document.addEventListener('contextmenu', disableRightClick);
+	});
+
 	onDestroy(() => {
 		if (isTypingEnabled) {
 			clearInterval(timerId);
 		}
+
+		document.removeEventListener('contextmenu', disableRightClick);
 	});
 </script>
 
@@ -149,7 +159,7 @@
 			<svelte:component this={PenNibOutline} slot="icon" class="w-8 h-auto text-primary-300" />
 		</StatItem>
 		<StatItem statName="Accuracy" statValue={(accuracy * 100).toFixed(2) + '%'}>
-			<svelte:component this={ClockOutline} slot="icon" class="w-8 h-auto text-primary-300" />
+			<svelte:component this={AwardOutline} slot="icon" class="w-8 h-auto text-primary-300" />
 		</StatItem>
 	</div>
 </div>

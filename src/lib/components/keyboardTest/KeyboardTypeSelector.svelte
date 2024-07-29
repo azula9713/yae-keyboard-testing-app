@@ -7,7 +7,7 @@
 </script>
 
 <div
-	class="inline-flex rounded-lg border border-gray-100 bg-gray-200 p-1 mt-8 dark:border-gray-700 dark:bg-gray-700"
+	class="inline-flex rounded-lg border border-gray-100 bg-gray-300 p-1 mt-8 dark:border-gray-700 dark:bg-gray-700"
 >
 	{#each keyboardTypes as type}
 		<button
@@ -20,15 +20,17 @@
 				<img
 					src={windowsLogo}
 					alt="Windows Logo"
-					class="w-6 h-6 inline-block dark:invert-[1] dark:brightness-0"
+					class="w-6 h-6 inline-block invert-[1] brightness-0"
 				/>
 			{:else if type === 'Mac'}
-				<img
-					src={macLogo}
-					alt="Mac Logo"
-					class="w-6 h-6 inline-block dark:invert-[1] dark:brightness-0"
-				/>
+				<img src={macLogo} alt="Mac Logo" class="w-6 h-6 inline-block invert-[1] brightness-0" />
 			{/if}
 		</button>
 	{/each}
 </div>
+
+<style>
+	.invertWhite {
+		filter: invert(1) brightness(0);
+	}
+</style>
