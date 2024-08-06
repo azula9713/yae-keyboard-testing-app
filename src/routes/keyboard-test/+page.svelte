@@ -4,6 +4,7 @@
 	import Newsletter from '$lib/components/home/Newsletter.svelte';
 	import KeyboardTypeSelector from '$lib/components/keyboardTest/KeyboardTypeSelector.svelte';
 	import KeyButton from '$lib/components/keyboardTest/KeyButton.svelte';
+	import PressingKeyToast from '$lib/components/keyboardTest/PressingKeyToast.svelte';
 	import WindowsKeyValues from '$lib/data/keyboardValues';
 
 	let keyboardTypes = ['Windows', 'Mac'];
@@ -78,6 +79,11 @@
 			| { key: string; preventDefault: () => void; location: number; stopPropagation: () => void }
 	) => {
 		switch (e.key.toLowerCase()) {
+			case 'printscreen':
+				currentKey = 'printscreen';
+				document.getElementById(currentKey.toLowerCase())?.classList.add('activate');
+				document.getElementById(currentKey.toLowerCase())?.classList.add('pressed');
+				break;
 			case 'shift':
 				// Determine whether it's left or right Shift key
 				if (e.location === 1) {
@@ -119,6 +125,9 @@
 		}
 
 		document.getElementById(currentKey.toLowerCase())?.classList.remove('activate');
+		setTimeout(() => {
+			currentKey = '';
+		}, 800);
 	};
 
 	const disableRightClick = (e: MouseEvent) => {
@@ -144,6 +153,7 @@
 			document.removeEventListener('keydown', handleKeyDown, true);
 			document.removeEventListener('keyup', handleKeyUp, true);
 			document.removeEventListener('contextmenu', disableRightClick);
+			currentKey = '';
 		};
 	});
 </script>
@@ -165,6 +175,10 @@
 			</div>
 		</div>
 	</div>
+	<!-- {currentKey && <PressingKeyToast pressedKey={currentKey} />} -->
+	{#if currentKey}
+		<PressingKeyToast pressedKey={currentKey} />
+	{/if}
 {:else}
 	<div class="w-full flex flex-col items-center justify-center text-center my-12">
 		<div class="text-primary-400 dark:text-slate-200">
