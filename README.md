@@ -20,4 +20,4 @@ Yae Key Test is a web application that allows users to test their keyboard and t
 
 ## Support
 
-For support, email fake@fake.com or join our Slack channel.
+For support, email nilesh@yaepublishinghouse.online.
