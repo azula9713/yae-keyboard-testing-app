@@ -109,7 +109,7 @@
 			clearInterval(timerId);
 		}
 
-		document.removeEventListener('contextmenu', disableRightClick);
+		if (document) document.removeEventListener('contextmenu', disableRightClick);
 	});
 </script>
 

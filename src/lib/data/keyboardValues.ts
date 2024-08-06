@@ -112,6 +112,14 @@ const WindowsKeyValues = [
 		shiftCode: 'insert'
 	},
 	{
+		label: 'PrtSc',
+		width: '12',
+		row: '1',
+		keyCode: 'printscreen',
+		shiftLabel: 'PrtSc',
+		shiftCode: 'printscreen'
+	},
+	{
 		label: 'delete',
 		width: 'full',
 		flexGrow: true,
@@ -577,9 +585,9 @@ const WindowsKeyValues = [
 		label: '▲',
 		width: '12',
 		row: '5',
-		keyCode: '▲',
+		keyCode: 'arrowup',
 		shiftLabel: '▲',
-		shiftCode: '▲'
+		shiftCode: 'arrowup'
 	},
 	{
 		label: 'end',
@@ -616,13 +624,13 @@ const WindowsKeyValues = [
 	},
 
 	{
-		label: '',
+		label: '____',
 		width: 'full',
 		row: '6',
 		flexGrow: true,
-		keyCode: '',
+		keyCode: ' ',
 		shiftLabel: '',
-		shiftCode: ''
+		shiftCode: ' '
 	},
 	{
 		label: '⊞',
@@ -649,28 +657,36 @@ const WindowsKeyValues = [
 		shiftCode: 'fn'
 	},
 	{
+		label: 'ctrl',
+		width: '12',
+		row: '6',
+		keyCode: 'ctrlR',
+		shiftLabel: 'ctrl',
+		shiftCode: 'ctrlR'
+	},
+	{
 		label: '◄',
 		width: '12',
 		row: '6',
-		keyCode: '◄',
+		keyCode: 'arrowleft',
 		shiftLabel: '◄',
-		shiftCode: '◄'
+		shiftCode: 'arrowleft'
 	},
 	{
 		label: '▼',
 		width: '12',
 		row: '6',
-		keyCode: '▼',
+		keyCode: 'arrowdown',
 		shiftLabel: '▼',
-		shiftCode: '▼'
+		shiftCode: 'arrowdown'
 	},
 	{
 		label: '►',
 		width: '12',
 		row: '6',
-		keyCode: '►',
+		keyCode: 'arrowright',
 		shiftLabel: '►',
-		shiftCode: '►'
+		shiftCode: 'arrowright►'
 	}
 ];
 
